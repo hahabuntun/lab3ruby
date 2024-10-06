@@ -1,0 +1,355 @@
+rails console
+"foo"
+"foo" + "bar"
+first_name = "Michael"
+"#{first_name} Hartl"
+puts "foo"
+print "foo\n"
+'foo'
+'foo' + 'bar'
+'#{foo} bar'
+'\n'
+'Newlines (\n) and tabs (\t) both use the backslash character \.'
+"Newlines (\\n) and tabs (\\t) both use the backslash character \\."
+city = 'kazan'
+state = 'tatarstan'
+puts "#{city}, #{state}"
+puts "#{city},\t#{state}"
+puts '#{city}, #{state}'
+puts '#{city},\t#{state}'
+"foobar".length
+"foobar".empty?
+"".empty?
+s = "foobar"
+if s.empty?
+   "The string is empty"
+else
+   "The string is nonempty"
+end
+if s.nil?
+   "The variable is nil"
+elsif s.empty?
+   The string is empty"
+elsif s.include?("foo")
+   "The string includes 'foo'"
+end
+
+x = "foo"
+y = ""
+puts "Both strings are empty" if x.empty? && y.empty?
+puts "One of the strings is empty" if x.empty? || y.empty?
+puts "x is not empty" if !x.empty?
+nil.to_s
+nil.to_s.empty?
+"foo".nil?
+"".nil?
+nil.nil?
+puts "x is not empty" if !x.empty?
+string = "foobar"
+puts "The string '#{string}' is nonempty." unless string.empty?
+!!nil
+!!0
+“racecar”.length
+s = "racecar"
+puts “racecar” if s == s.reverse
+puts "It's a palindrome!" if s == s.reverse
+s = "onomatopoeia"
+puts “onomatopoeia" if s == s.reverse
+def string_message(str = '')
+  if str.empty?
+    "It's an empty string!"
+  else
+    "The string is nonempty."
+  end
+end
+puts string_message("foobar")
+puts string_message("")
+puts string_message
+def string_message(str = '')
+  return "It's an empty string!" if str.empty?
+  return "The string is nonempty."
+end
+def string_message(the_function_argument = '')
+  if the_function_argument.empty?
+    "It's an empty string!"
+  else
+    "The string is nonempty."
+  end
+end
+puts string_message("")
+puts string_message("foobar")
+def palindrome_tester(s)
+  if s == s.reverse
+    puts "It's a palindrome!"
+  else
+    puts "It's not a palindrome."
+  end
+end
+palindrome_tester("racecar")
+palindrome_tester("onomatopoeia")
+palindrome_tester("racecar").nil?
+
+"foo bar     baz".split
+"fooxbarxbaz".split('x')
+
+a = [42, 8, 17]
+a[0]
+a[1]
+a[2]
+a[-1]
+a
+a.first
+a.second
+a.last
+a.last == a[-1]
+x = a.length
+x == 3
+x == 1
+x != 1
+x >= 1
+x < 1
+a.empty?
+a.include?(42)
+a.sort
+a.reverse
+a.shuffle
+a
+a.sort!
+a
+a = [42, 8, 17]
+a.push(6)
+a << 7
+a << "foo" << "bar"
+a
+a.join
+a.join(', ')
+0..9
+(0..9).to_a
+a = %w[foo bar baz quux]
+a[0..2]
+
+a = (0..9).to_a
+a[2..(a.length-1)]
+a[2..-1]
+('a'..'e').to_a
+a = “A man, a plan, a canal, Panama”.split(", ")
+s = a.join
+s = s.split.join('')
+palindrome_tester(s)
+palindrome_tester(s.downcase)
+('a'..'z').to_a[6]
+('a'..'z').to_a.reverse[6]
+(1..5).each { |i| puts 2 * i }
+(1..5).each do |i|
+   puts 2 * i
+end
+(1..5).each do |number|
+   puts 2 * number
+   puts '--'
+end
+
+3.times { puts "Betelgeuse!" }
+(1..5).map { |i| i**2 }
+%w[a b c]
+%w[a b c].map { |char| char.upcase }
+%w[A B C].map { |char| char.downcase }
+%w[A B C].map(&:downcase)
+
+test "should get home" do
+   get static_pages_home_url
+   assert_response :success
+   assert_select "title", "Ruby on Rails Tutorial Sample App"
+end
+
+('a'..'z').to_a.shuffle[0..7].join
+('a'..'z').to_a
+('a'..'z').to_a.shuffle
+('a'..'z').to_a.shuffle[0..7]
+('a'..'z').to_a.shuffle[0..7].join
+
+(0..16).each { |n| puts 2**n }
+def yeller(chars)
+  chars.map(&:upcase).join
+end
+puts yeller(['o', 'l', 'd'])
+
+def shuffled_subdomain
+  ('a'..'z').to_a.shuffle[0, 8].join
+end
+puts shuffled_subdomain
+
+def shuffle_string(str)
+  str.split('').shuffle.join
+end
+puts shuffle_string("hello")
+
+user = {}
+user["first_name"] = "Michael"
+user["last_name"] = "Hartl"
+user["first_name"]
+user
+user = { "first_name" => "Michael", "last_name" => "Hartl" }
+
+"name".split('')
+"foobar".reverse
+
+user = { :name => "Michael Hartl", :email => "michael@example.com" }
+user[:name]
+user[:password]
+
+h1 = { :name => "Michael Hartl", :email => "michael@example.com" }
+h2 = { name: "Michael Hartl", email: "michael@example.com" }
+h1 == h2
+
+params = {}
+params[:user] = { name: "Michael Hartl", email: "mhartl@example.com" }
+params
+params[:user][:email]
+
+flash = { success: "It worked!", danger: "It failed." }
+flash.each do |key, value|
+   puts "Key #{key.inspect} has value #{value.inspect}"
+end
+
+puts (1..5).to_a
+puts (1..5).to_a.inspect
+puts :name, :name.inspect
+puts "It worked!", "It worked!".inspect
+p :name
+
+numbers_in_spanish = {
+  'one' => 'uno',
+  'two' => 'dos',
+  'three' => 'tres'
+}
+
+numbers_in_spanish.each do |key, value|
+  puts "'#{key}' in Spanish is '#{value}'"
+end
+
+person1 = { first: 'John', last: 'Doe' }
+person2 = { first: 'Jane', last: 'Doe' }
+person3 = { first: 'Jake', last: 'Doe' }
+
+params = {
+  father: person1,
+  mother: person2,
+  child: person3
+}
+
+puts params[:father][:first]
+puts params[:mother][:first]
+puts params[:child][:first]
+
+user_data = {
+  name: 'Your Name',
+  email: 'your.email@example.com',
+  password_digest: Array('a'..'z').sample(16).join
+}
+
+puts user_data
+
+hash1 = { a: 100, b: 200 }
+hash2 = { b: 300, c: 400 }
+
+result = hash1.merge(hash2)
+puts result
+
+s = "foobar"
+s.class
+s = String.new("foobar")
+s.class
+s == "foobar"
+a = Array.new([1, 3, 2])
+h = Hash.new
+h[:foo]
+h = Hash.new(0)
+h[:foo]
+
+range_literal = 1..10
+range_class = Range.new(1, 10)
+puts range_literal == range_class
+
+s = String.new("foobar")
+s.class
+s.class.superclass
+s.class.superclass.superclass
+s.class.superclass.superclass.superclass
+
+class Word
+  def palindrome?(string)
+    string == string.reverse
+  end
+end
+w = Word.new
+w.palindrome?("foobar")
+w.palindrome?("level")
+
+class Word < String             # Word inherits from String.
+  # Returns true if the string is its own reverse.
+  def palindrome?
+    self == self.reverse        # self is the string itself.
+  end
+end
+s = Word.new("level")
+s.palindrome
+s.length
+s.class
+s.class.superclass
+s.class.superclass.superclass
+
+class String
+  # Returns true if the string is its own reverse.
+  def palindrome?
+    self == self.reverse
+  end
+end
+"deified".palindrome?
+
+"".blank?
+"      ".empty?
+nil.blank?
+
+puts "racecar".palindrome?        # => true
+puts "onomatopoeia".palindrome?   # => false
+puts "Malayalam".downcase.palindrome?  # => true
+
+class String
+  def shuffle
+    self.split('').shuffle.join
+  end
+end
+
+class String
+  def shuffle
+    split('').shuffle.join  # No need for self.
+  end
+end
+
+puts "foobar".shuffle  # Example output: "borafo"
+puts "hello".shuffle
+
+
+controller = StaticPagesController.new
+controller.class
+controller.class.superclass
+controller.class.superclass.superclass
+controller.class.superclass.superclass.superclass
+controller.class.superclass.superclass.superclass.superclass
+controller.class.superclass.superclass.superclass.superclass.superclass
+
+controller.home
+
+user = User.new(name: "Example User", email: "user@example.com")
+puts user
+
+
+require './example_user'
+example = User.new
+example.name
+example.name = "Example User"
+example.email = "user@example.com"
+example.formatted_email
+
+user = User.new(name: "Michael Hartl", email: "mhartl@example.com")
+user.formatted_email
