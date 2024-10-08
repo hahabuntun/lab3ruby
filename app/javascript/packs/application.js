@@ -1,11 +1,11 @@
-// app/javascript/packs/application.js
-
+// Importing Rails UJS
 import Rails from '@rails/ujs';
+
+// Start Rails UJS
 Rails.start();
 
+// Other imports
 import * as ActiveStorage from '@rails/activestorage';
-ActiveStorage.start();
+import './channels';
 
-import 'channels';
-
-console.log('Webpacker is working!');
+// Additional code...
