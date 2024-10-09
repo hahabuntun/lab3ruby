@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "3.0.2"
 
 gem "rails", "~> 7.1.4"
+gem "bcrypt"
 
 # Add bootstrap-sass for Bootstrap 3
 gem "bootstrap-sass", "3.4.1"
