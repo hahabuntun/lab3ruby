@@ -10,6 +10,8 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.assets.debug = true
+  config.assets.compile = true
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -29,7 +31,6 @@ Rails.application.configure do
     }
   else
     config.action_controller.perform_caching = false
-
     config.cache_store = :null_store
   end
 
@@ -38,7 +39,6 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
@@ -56,7 +56,7 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-  # Highlight code that enqueued background job in logs.
+  # Highlight code that enqueued background jobs in logs.
   config.active_job.verbose_enqueue_logs = true
 
   # Suppress logger output for asset requests.
@@ -73,5 +73,16 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Allow all hosts in development mode
   config.hosts.clear
+
+  # Optional: If using Action Mailer, configure default URL options
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Optional: Enable debugging for assets (useful for development)
+  # config.assets.debug = true
+
+  # Optional: Enable reloading of routes (not common but can be useful)
+  # config.reload_classes_only_on_change = true
 end
